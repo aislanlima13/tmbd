@@ -1,4 +1,4 @@
-package com.example.tmdbclient.data.Model.artists
+package com.example.tmdbclient.data.model.artists
 
 
 import androidx.room.Entity
