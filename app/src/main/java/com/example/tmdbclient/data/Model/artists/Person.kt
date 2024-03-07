@@ -1,13 +1,15 @@
 package com.example.tmdbclient.data.Model.artists
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "tmdb_popular_artists")
 data class Person(
+    @PrimaryKey
     @SerializedName("id")
     val id: Int,
-    @SerializedName("known_for")
-    val knownFor: List<KnownFor>?,
     @SerializedName("name")
     val name: String?,
     @SerializedName("popularity")
