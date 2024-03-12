@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.home
+package com.example.tmdbclient.presentation.ui.movie
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.tmdbclient.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class MovieFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -22,14 +22,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val movieViewModel =
+            ViewModelProvider(this).get(MovieViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        movieViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_movies"
-        android:name="com.example.tmdbclient.ui.home.HomeFragment"
+        android:name="com.example.tmdbclient.presentation.ui.movie.MovieFragment"
         android:label="@string/title_movies"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_tv_shows"
-        android:name="com.example.tmdbclient.ui.dashboard.DashboardFragment"
+        android:name="com.example.tmdbclient.presentation.ui.artist.ArtistFragment"
         android:label="@string/title_tv_shows"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_actors"
-        android:name="com.example.tmdbclient.ui.notifications.NotificationsFragment"
+        android:name="com.example.tmdbclient.presentation.ui.tvshow.TvShowFragment"
         android:label="@string/title_actors"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

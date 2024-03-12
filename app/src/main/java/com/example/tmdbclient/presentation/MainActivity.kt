@@ -1,4 +1,4 @@
-package com.example.tmdbclient
+package com.example.tmdbclient.presentation
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.tmdbclient.R
 import com.example.tmdbclient.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
