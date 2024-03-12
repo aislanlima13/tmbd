@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "tmdb_popular_artists")
-data class Person(
+data class Artist(
     @PrimaryKey
     @SerializedName("id")
     val id: Int,

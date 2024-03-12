@@ -1,7 +1,7 @@
 package com.example.tmdbclient.data.api
 
 import com.example.tmdbclient.data.model.movie.MovieList
-import com.example.tmdbclient.data.model.artists.PersonList
+import com.example.tmdbclient.data.model.artists.ArtistsList
 import com.example.tmdbclient.data.model.tvshows.TvShowsList
 import retrofit2.Response
 import retrofit2.http.GET
@@ -16,5 +16,5 @@ interface TMDBService {
     suspend fun getPopularTvShows(@Query("api_key") apiKey: String): Response<TvShowsList>
 
     @GET("person/popular")
-    suspend fun getPopularArtists(@Query("api_key") apiKey: String): Response<PersonList>
+    suspend fun getPopularArtists(@Query("api_key") apiKey: String): Response<ArtistsList>
 }

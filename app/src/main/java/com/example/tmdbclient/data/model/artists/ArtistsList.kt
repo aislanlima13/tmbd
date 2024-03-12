@@ -3,7 +3,7 @@ package com.example.tmdbclient.data.model.artists
 
 import com.google.gson.annotations.SerializedName
 
-data class PersonList(
+data class ArtistsList(
     @SerializedName("results")
-    val people: List<Person>
+    val people: List<Artist>
 )
