@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_actors"
+        android:id="@+id/navigation_artists"
         android:name="com.example.tmdbclient.presentation.ui.tvshow.TvShowFragment"
         android:label="@string/title_actors"
         tools:layout="@layout/fragment_notifications" />

@@ -2,5 +2,5 @@
     <string name="app_name">TMDB</string>
     <string name="title_movies">movies</string>
     <string name="title_tv_shows">tv shows</string>
-    <string name="title_actors">actors</string>
+    <string name="title_actors">artists</string>
 </resources>
