@@ -18,6 +18,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_KEY", "\"db9201040fdd93b74aba38458bffd775\"")
+        buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
     }
 
     buildTypes {
@@ -75,7 +76,11 @@ dependencies {
 
     // Dagger
     implementation("com.google.dagger:dagger:$daggerVersion")
+    implementation("com.google.dagger:dagger-android-support:$daggerVersion")
+    implementation("com.google.dagger:dagger-android:$daggerVersion")
     kapt("com.google.dagger:dagger-compiler:$daggerVersion")
+    kapt("com.google.dagger:dagger-android-processor:$daggerVersion")
+    kapt("com.google.dagger:dagger-android-support:$daggerVersion")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
