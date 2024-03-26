@@ -9,7 +9,7 @@
         android:id="@+id/navigation_movies"
         android:name="com.example.tmdbclient.presentation.ui.movie.MovieFragment"
         android:label="@string/title_movies"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_movie" />
 
     <fragment
         android:id="@+id/navigation_tv_shows"
