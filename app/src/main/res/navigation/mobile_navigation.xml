@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_movies">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.tmdbclient.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_movies"
+        android:name="com.example.tmdbclient.presentation.ui.movie.MovieFragment"
+        android:label="@string/title_movies"
+        tools:layout="@layout/fragment_movie" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.tmdbclient.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_tv_shows"
+        android:name="com.example.tmdbclient.presentation.ui.tvshow.TvShowFragment"
+        android:label="@string/title_tv_shows"
+        tools:layout="@layout/fragment_tv_show" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.tmdbclient.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_artists"
+        android:name="com.example.tmdbclient.presentation.ui.artist.ArtistFragment"
+        android:label="@string/title_actors"
+        tools:layout="@layout/fragment_artist" />
 </navigation>
