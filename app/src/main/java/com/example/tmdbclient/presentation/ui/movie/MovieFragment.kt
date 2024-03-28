@@ -1,5 +1,6 @@
 package com.example.tmdbclient.presentation.ui.movie
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.tmdbclient.data.model.movie.Movie
 import com.example.tmdbclient.databinding.FragmentMovieBinding
 import com.example.tmdbclient.presentation.di.Injector
 import javax.inject.Inject
@@ -33,6 +35,7 @@ class MovieFragment : Fragment() {
         initViewModel()
         initRecyclerView()
         initObserver()
+        swipeListener()
 
         return root
     }
@@ -60,14 +63,30 @@ class MovieFragment : Fragment() {
         binding.pbMovie.visibility = View.VISIBLE
         val responseLiveData = viewModel.getMovies()
         responseLiveData.observe(viewLifecycleOwner) {
-            if (!it.isNullOrEmpty()) {
-                adapter.setList(it)
-                adapter.notifyDataSetChanged()
-                binding.pbMovie.visibility = View.GONE
-            } else {
-                binding.pbMovie.visibility = View.GONE
-                Toast.makeText(context, "No data available", Toast.LENGTH_LONG).show()
+            it?.let { movies -> setMoviesToAdapter(movies) }
+        }
+    }
+
+    private fun swipeListener() {
+        binding.swipeMovies.setOnRefreshListener {
+            val responseLiveData = viewModel.updateMovies()
+            responseLiveData.observe(viewLifecycleOwner) {
+                it?.let { movies -> setMoviesToAdapter(movies) }
+                binding.swipeMovies.isRefreshing = false
             }
         }
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun setMoviesToAdapter(movies: List<Movie>) {
+        if (movies.isNotEmpty()) {
+            adapter.setList(movies)
+            adapter.notifyDataSetChanged()
+            binding.pbMovie.visibility = View.GONE
+        } else {
+            binding.pbMovie.visibility = View.GONE
+            Toast.makeText(context, "No data available", Toast.LENGTH_LONG).show()
+        }
+    }
+
 }
