@@ -43,7 +43,7 @@ class ArtistFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        (viewLifecycleOwner as Injector).createArtistSubComponent()
+        (activity?.application as Injector).createArtistSubComponent()
             .inject(this)
 
         viewModel = ViewModelProvider(this, factory)

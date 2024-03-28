@@ -43,7 +43,7 @@ class TvShowFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        (viewLifecycleOwner as Injector).createTvShowSubComponent()
+        (activity?.application as Injector).createTvShowSubComponent()
             .inject(this)
 
         viewModel = ViewModelProvider(this, factory)

@@ -43,7 +43,7 @@ class MovieFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        (viewLifecycleOwner as Injector).createMovieSubComponent()
+        (activity?.application as Injector).createMovieSubComponent()
             .inject(this)
 
         viewModel = ViewModelProvider(this, factory)
