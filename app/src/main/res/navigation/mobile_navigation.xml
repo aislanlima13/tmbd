@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_tv_shows"
-        android:name="com.example.tmdbclient.presentation.ui.artist.ArtistFragment"
+        android:name="com.example.tmdbclient.presentation.ui.tvshow.TvShowFragment"
         android:label="@string/title_tv_shows"
-        tools:layout="@layout/fragment_artist" />
+        tools:layout="@layout/fragment_tv_show" />
 
     <fragment
         android:id="@+id/navigation_artists"
-        android:name="com.example.tmdbclient.presentation.ui.tvshow.TvShowFragment"
+        android:name="com.example.tmdbclient.presentation.ui.artist.ArtistFragment"
         android:label="@string/title_actors"
-        tools:layout="@layout/fragment_tv_show" />
+        tools:layout="@layout/fragment_artist" />
 </navigation>
