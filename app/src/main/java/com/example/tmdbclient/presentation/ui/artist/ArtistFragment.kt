@@ -11,9 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmdbclient.data.model.artists.Artist
 import com.example.tmdbclient.databinding.FragmentArtistBinding
-import com.example.tmdbclient.presentation.di.Injector
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class ArtistFragment : Fragment() {
 
     private var _binding: FragmentArtistBinding? = null
@@ -46,11 +47,7 @@ class ArtistFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        (activity?.application as Injector).createArtistSubComponent()
-            .inject(this)
-
-        viewModel = ViewModelProvider(this, factory)
-            .get(ArtistViewModel::class.java)
+        viewModel = ViewModelProvider(this, factory)[ArtistViewModel::class.java]
     }
 
     private fun initRecyclerView() {
