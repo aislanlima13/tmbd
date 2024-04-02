@@ -11,9 +11,12 @@ import com.example.tmdbclient.domain.usecase.UpdateMoviesUseCase
 import com.example.tmdbclient.domain.usecase.UpdateTvShowsUseCase
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class UseCaseModule {
 
     @Singleton

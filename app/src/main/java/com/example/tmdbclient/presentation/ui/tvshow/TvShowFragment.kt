@@ -11,9 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmdbclient.data.model.tvshows.TvShow
 import com.example.tmdbclient.databinding.FragmentTvShowBinding
-import com.example.tmdbclient.presentation.di.Injector
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class TvShowFragment : Fragment() {
 
     private var _binding: FragmentTvShowBinding? = null
@@ -46,11 +47,7 @@ class TvShowFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        (activity?.application as Injector).createTvShowSubComponent()
-            .inject(this)
-
-        viewModel = ViewModelProvider(this, factory)
-            .get(TvShowViewModel::class.java)
+        viewModel = ViewModelProvider(this, factory)[TvShowViewModel::class.java]
     }
 
     private fun initRecyclerView() {
